@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Productivity Tracker",
-  "description": "Introducing Productivity Tracker, your trusted ally for optimizing your online presence. This feature-rich extension empowers you to take control of your digital habits. Track your daily website usage effortlessly and explore detailed monthly timelines to gain insights into your online activities. Set personalized alerts to stay mindful of your screen time and maintain a balanced digital lifestyle. But that's not all - Productivity Tracker goes beyond tracking. Secure your browsing environment with PIN authentication, enabling you to restrict access to specific websites. Regain your focus and productivity by blocking distracting sites, ensuring a distraction-free workspace.Experience a holistic approach to managing your online presence with Productivity Tracker. Elevate your digital well-being, stay organized, and achieve your goals in a more mindful and controlled online environment.",
+  "description": "The Productivity Tracker Chrome Extension is a powerful tool designed to help you take control of your digital life. This extension provides essential features to monitor and manage your online activities, fostering a more productive and mindful online experience.",
   "version": "0.0.1",
   "action":{
     "default_popup": "index.html"

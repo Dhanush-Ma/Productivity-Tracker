@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Productivity Tracker Chrome Extension
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The Productivity Tracker Chrome Extension is a powerful tool designed to help you take control of your digital life. This extension provides essential features to monitor and manage your online activities, fostering a more productive and mindful online experience.
 
-In the project directory, you can run:
+![Screenshot (95)](https://github.com/Dhanush-Ma/Productivity-Tracker/assets/102428471/1af6cac4-5a2d-416a-9e6a-576e5ef94168)
+![Screenshot (96)](https://github.com/Dhanush-Ma/Productivity-Tracker/assets/102428471/50d20fb4-9a12-43e3-90b4-810ce5da2d94)
+![Screenshot (97)](https://github.com/Dhanush-Ma/Productivity-Tracker/assets/102428471/0d3f2bf7-7a86-48d6-9d7c-973c57d45578)
+![Screenshot (98)](https://github.com/Dhanush-Ma/Productivity-Tracker/assets/102428471/43420059-241c-4921-a6af-4b7637525093)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Website Usage Tracking**: Effortlessly monitor your daily website usage with detailed insights.
+- **Monthly Timelines**: Explore monthly timelines to gain deeper insights into your online habits.
+- **Personalized Alerts**: Set customized alerts to stay mindful of your screen time and maintain a balanced digital lifestyle.
+- **PIN Authentication**: Secure your browsing environment with PIN authentication, allowing you to restrict access to specific websites.
+- **Site Blocking**: Boost productivity by blocking distracting sites and creating a focused workspace.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Download the extension from the Chrome Web Store. (Link will be provided soon.)
+2. Click on the extension icon in your browser to get started.
 
-### `npm run build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Track your online activities and view detailed reports.
+- Set alerts to manage your screen time effectively.
+- Use PIN authentication to secure your browsing environment.
+- Block distracting websites for enhanced productivity.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Contributions to this project are welcome! Feel free to open issues, submit pull requests, or provide feedback to help us improve the extension.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contact
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+For any questions or support, please contact us at [iamdhanush02@gmail.com](mailto:iamdhanush02@gmail.com).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Enjoy a more productive and mindful digital life with the Productivity Tracker Chrome Extension!

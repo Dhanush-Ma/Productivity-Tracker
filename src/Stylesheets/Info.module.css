@@ -1,0 +1,188 @@
+.container{
+    height: var(--height);
+    width: var(--width);
+    background-color: #330055;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23330055' cx='50' cy='0' r='50'/%3E%3Cg fill='%23370158' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%233b035b' cx='50' cy='100' r='50'/%3E%3Cg fill='%233f045f' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23430662' cx='50' cy='200' r='50'/%3E%3Cg fill='%23470865' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%234b0b68' cx='50' cy='300' r='50'/%3E%3Cg fill='%234f0d6b' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%2353106f' cx='50' cy='400' r='50'/%3E%3Cg fill='%23571272' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%235c1475' cx='50' cy='500' r='50'/%3E%3Cg fill='%23601678' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%2364197b' cx='50' cy='600' r='50'/%3E%3Cg fill='%23681b7f' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%236d1d82' cx='50' cy='700' r='50'/%3E%3Cg fill='%23711f85' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23752188' cx='50' cy='800' r='50'/%3E%3Cg fill='%237a238b' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%237e268f' cx='50' cy='900' r='50'/%3E%3Cg fill='%23832892' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23872A95' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: var(--white);
+    padding: 1rem;
+    position: relative;
+}
+
+.infoContainer{
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    justify-content:space-between;
+}
+
+.currentTabContainer{
+    max-width: calc(350px - 2.5rem);
+}
+
+.infoContainer h1{
+    font-size: 1.7rem;
+    text-align: left;
+    max-width: 100%;
+}
+
+.currentTab{
+    display: block;
+    color: var(--secondary-shade1);
+    overflow-wrap: break-word;
+}
+
+.timerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    min-width: var(--timer-width);
+    max-width: var(--timer-width);
+    background-color: var(--secondary);
+    padding: 0.7rem  0; 
+    border-radius: 5px;
+}
+
+.timerTitle{
+    border-bottom: 2px solid var(--secondary-shade1);
+    width: 100%;
+    text-align: center;
+    padding-bottom: 5px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.timer{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.timerUnit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timerUnitNumber{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.timerUnitText{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.alertInfoContainer{
+    margin-top: 2rem;
+    display: flex;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    background: linear-gradient(222.38deg,#6a0978,#35297f 91.75%,#35297f);
+    -webkit-box-shadow: 10px -5px 48px -19px rgba(0,0,0,0.87);
+    -moz-box-shadow: 10px -5px 48px -19px rgba(0,0,0,0.87);
+    box-shadow: 10px -5px 48px -19px rgba(0,0,0,0.87);
+}
+
+.alertDesc{
+    padding-left: 1rem;
+    font-size: 1.2rem;
+}
+
+.btnContainer{
+    display: flex;
+}
+
+.disableBtn{
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.deleteBtn{
+    background-color: rgb(241, 40, 40);
+    padding: 1rem;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}
+
+.timerInfoContainer{
+    margin-top: 2rem;
+    display: flex;
+    background-color: var(--primary);
+    align-items: center;
+    border-radius: 5px;
+    background: linear-gradient(222.38deg,#bd57cd,#35297f 91.75%,#35297f);
+    -webkit-box-shadow: 10px -5px 48px -19px rgba(0,0,0,0.87);
+-moz-box-shadow: 10px -5px 48px -19px rgba(0,0,0,0.87);
+box-shadow: 10px -5px 48px -19px rgba(0,0,0,0.87);
+}
+
+.timerBtn{
+    width: max-content;
+    height: 100%;
+    padding: 1rem ;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+}
+
+.timerDesc{
+    padding-left: 1rem;
+    font-size: 1.2rem;
+}
+
+.alterTimers{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+
+.alterTimer{
+    text-align: center;
+    border-right: 2px var(--secondary-shade1) solid;
+    cursor: pointer;
+    width: 20%;
+    height: 100%;
+    font-size: 1.2rem;
+}
+
+.alterTimer:last-child{
+    border-right: none;
+}
+
+.alterTimer p:hover{
+    color: var(--secondary-shade1);
+}
+
+.navabarContainer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    display: flex;
+}
+
+.link{
+    height: 100%;
+    width: calc(var(--width)/3) ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1.2rem;
+}
+

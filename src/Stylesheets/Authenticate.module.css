@@ -1,0 +1,42 @@
+.container{
+    background-color: #f6f0c4;
+    background-image: linear-gradient(315deg, #f6f0c4 0%, #d99ec9 74%);
+    height: 300px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: #121212;
+}
+
+.container h1{
+    text-align: center;
+}
+
+.button{
+    display: flex;
+    border: 4px solid #121212;
+    border-radius: 12px; 
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    width: max-content;
+    margin: 0 auto;  
+    padding: 0.5rem 1rem;
+}
+
+.button:hover{
+    background-color: #d99ec9;
+    cursor: pointer;
+}
+
+.button img{
+    width: 70px;
+    height: 70px;
+}
+
+.button p{
+    font-size: 1.5rem;
+}

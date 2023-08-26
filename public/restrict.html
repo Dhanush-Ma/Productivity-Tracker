@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restrict Sites</title>
+    <link rel="stylesheet" href="./css/restrict.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbarContainer">
+        <div class="logo">
+          <p>Productivity Tracker</p>
+          <img src="https://cdn-icons-png.flaticon.com/512/4149/4149646.png" />
+        </div>
+        <div class="links">
+          <a target="_blank" href="https://dhansuh-mahesh.netlify.app/"
+            >Community</a
+          >
+        </div>
+      </div>
+      <div class="create_account_container">
+        <h1>Create an account to start restricting sites</h1>
+        <div class="pin_container">
+          <div>
+            <input
+              class="pin"
+              id="pin1"
+              type="text"
+              maxlength="1"
+              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+            />
+          </div>
+          <div>
+            <input
+              class="pin"
+              id="pin2"
+              type="text"
+              maxlength="1"
+              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+            />
+          </div>
+          <div>
+            <input
+              class="pin"
+              id="pin3"
+              type="text"
+              maxlength="1"
+              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+            />
+          </div>
+          <div>
+            <input
+              class="pin"
+              id="pin4"
+              type="text"
+              maxlength="1"
+              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+            />
+          </div>
+        </div>
+        <button class="confirm_btn">CONFIRM</button>
+      </div>
+      <div class="check_pin_container">
+        <h1>Enter your account PIN to manage the restricted sites</h1>
+        <div class="pin_container">
+          <div>
+            <input
+              class="pin"
+              id="pin1c"
+              type="text"
+              maxlength="1"
+              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+            />
+          </div>
+          <div>
+            <input
+              class="pin"
+              id="pin2c"
+              type="text"
+              maxlength="1"
+              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+            />
+          </div>
+          <div>
+            <input
+              class="pin"
+              id="pin3c"
+              type="text"
+              maxlength="1"
+              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+            />
+          </div>
+          <div>
+            <input
+              class="pin"
+              id="pin4c"
+              type="text"
+              maxlength="1"
+              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+            />
+          </div>
+        </div>
+        <button class="check_btn">CONFIRM</button>
+      </div>
+      <div class="restricted_sites_container">
+        <div class="site_input_container">
+          <div class="input">
+            <input
+              class="site_name"
+              placeholder="Enter the site name"
+              type="text"
+            />
+            <button class="restrict_btn">RESTRICT</button>
+          </div>
+          <p class="info">
+            Please ensure that the site name consists solely of the domain name,
+            such as "youtube.com" , "mail.google.com"
+          </p>
+        </div>
+        <div class="restricted_sites_table"></div>
+      </div>
+    </div>
+  </body>
+  <script defer type="module" src="./js/restrict.js"></script>
+</html>

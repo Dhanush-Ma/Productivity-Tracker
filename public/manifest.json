@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Productivity Tracker",
-  "description": "The Productivity Tracker Chrome Extension is a powerful tool designed to help you take control of your digital life. This extension provides essential features to monitor and manage your online activities, fostering a more productive and mindful online experience.",
+  "description": "Enhance productivity with our Chrome Extension. Track, manage, and optimize your online activities.",
   "version": "0.0.1",
   "action":{
     "default_popup": "index.html"
@@ -16,10 +16,6 @@
     "tabs",
     "activeTab",
     "storage"
-  ],
-  "host_permissions": [
-    "https://*/",
-    "http://*/"
   ],
   "content_scripts": [
     {

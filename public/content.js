@@ -1,4 +1,3 @@
-console.log("Content.hhjs");
 const id = "cobpilibcfpjgkcklmhgagemnjmhdlmi";
 const key = `${id}_restrict`;
 
@@ -167,7 +166,7 @@ function restrictAccessToSite() {
              align-items: center;
         }
         h1{
-            font-size: 52px !important;
+            font-size: 60px !important;
         }
         p{
             position: absolute;
@@ -175,7 +174,7 @@ function restrictAccessToSite() {
             left: 50%;
             transform: translateX(-50%);
             font-weight: bold;
-            font-size: 20px !important;
+            font-size: 30px !important;
         }
     </style>
 </head>

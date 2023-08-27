@@ -30,7 +30,7 @@ async function updateStorageValue() {
           timer: prevResult.today_timer,
         });
         prevResult.today_date = today_date;
-        prevResult.today_timer = 1000;
+        prevResult.today_timer = 0;
       }
 
       prevResult =
@@ -45,7 +45,6 @@ async function updateStorageValue() {
             };
       prevResult.today_timer = prevResult.today_timer + 1000;
 
-      //console.log(prevResult);
       chrome.storage.local.set({ [key]: prevResult });
     });
   });
@@ -98,3 +97,5 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
   return true;
 });
+
+

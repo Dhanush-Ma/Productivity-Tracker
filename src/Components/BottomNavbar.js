@@ -1,5 +1,4 @@
 import styles from "../Stylesheets/Info.module.css";
-import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { MdTimeline } from "react-icons/md";
 import { BsInfoCircle } from "react-icons/bs";

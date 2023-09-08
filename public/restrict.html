@@ -11,97 +11,66 @@
       <div class="navbarContainer">
         <div class="logo">
           <p>Productivity Tracker</p>
-          <img src="https://cdn-icons-png.flaticon.com/512/4149/4149646.png" />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4149/4149646.png"
+            alt="logo"
+          />
         </div>
         <div class="links">
-          <a target="_blank" href="https://github.com/Dhanush-Ma/Productivity-Tracker"
+          <a
+            target="_blank"
+            href="https://github.com/Dhanush-Ma/Productivity-Tracker"
             >Community</a
           >
         </div>
       </div>
+      <div class="email_otp">
+        <h2>An OTP is sent to your registered email address</h2>
+        <div class="pin_container">
+          <input class="pin" id="pin1o" type="text" maxlength="1" />
+          <input class="pin" id="pin2o" type="text" maxlength="1" />
+          <input class="pin" id="pin3o" type="text" maxlength="1" />
+          <input class="pin" id="pin4o" type="text" maxlength="1" />
+        </div>
+        <button class="confirm_otp_btn btn">CONFIRM OTP</button>
+      </div>
+      <div class="set_new_pin">
+        <h2>Enter your new PIN</h2>
+        <div class="pin_container">
+          <input class="pin" id="pin1np" type="text" maxlength="1" />
+          <input class="pin" id="pin2np" type="text" maxlength="1" />
+
+          <input class="pin" id="pin3np" type="text" maxlength="1" />
+          <input class="pin" id="pin4np" type="text" maxlength="1" />
+        </div>
+        <button class="set_new_pin_btn btn">CHANGE PIN</button>
+      </div>
       <div class="create_account_container">
         <h1>Create an account to start restricting sites</h1>
+        <input type="email" class="email" placeholder="Enter your email" />
+        <h2 class="pin_heading">SECURE PIN</h2>
         <div class="pin_container">
-          <div>
-            <input
-              class="pin"
-              id="pin1"
-              type="text"
-              maxlength="1"
-              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
-            />
-          </div>
-          <div>
-            <input
-              class="pin"
-              id="pin2"
-              type="text"
-              maxlength="1"
-              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
-            />
-          </div>
-          <div>
-            <input
-              class="pin"
-              id="pin3"
-              type="text"
-              maxlength="1"
-              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
-            />
-          </div>
-          <div>
-            <input
-              class="pin"
-              id="pin4"
-              type="text"
-              maxlength="1"
-              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
-            />
-          </div>
+          <input class="pin" id="pin1" type="text" maxlength="1" />
+          <input class="pin" id="pin2" type="text" maxlength="1" />
+
+          <input class="pin" id="pin3" type="text" maxlength="1" />
+
+          <input class="pin" id="pin4" type="text" maxlength="1" />
         </div>
-        <button class="confirm_btn">CONFIRM</button>
+        <button class="confirm_btn btn">CONFIRM</button>
       </div>
       <div class="check_pin_container">
         <h1>Enter your account PIN to manage the restricted sites</h1>
         <div class="pin_container">
-          <div>
-            <input
-              class="pin"
-              id="pin1c"
-              type="text"
-              maxlength="1"
-              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
-            />
-          </div>
-          <div>
-            <input
-              class="pin"
-              id="pin2c"
-              type="text"
-              maxlength="1"
-              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
-            />
-          </div>
-          <div>
-            <input
-              class="pin"
-              id="pin3c"
-              type="text"
-              maxlength="1"
-              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
-            />
-          </div>
-          <div>
-            <input
-              class="pin"
-              id="pin4c"
-              type="text"
-              maxlength="1"
-              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
-            />
-          </div>
+          <input class="pin" id="pin1c" type="text" maxlength="1" />
+          <input class="pin" id="pin2c" type="text" maxlength="1" />
+          <input class="pin" id="pin3c" type="text" maxlength="1" />
+          <input class="pin" id="pin4c" type="text" maxlength="1" />
         </div>
-        <button class="check_btn">CONFIRM</button>
+        <div class="forgot_container">
+          <button class="check_btn btn">CONFIRM</button>
+          <p class="forgot_pin">Forgot Pin?</p>
+        </div>
       </div>
       <div class="restricted_sites_container">
         <div class="site_input_container">
@@ -111,16 +80,17 @@
               placeholder="Enter the site name"
               type="text"
             />
-            <button class="restrict_btn">RESTRICT</button>
+            <button class="restrict_btn btn">RESTRICT</button>
           </div>
           <p class="info">
             Please ensure that the site name consists solely of the domain name,
             such as "youtube.com" , "mail.google.com"
           </p>
         </div>
+        <p id="email_address"></p>
         <div class="restricted_sites_table"></div>
       </div>
     </div>
   </body>
-  <script defer type="module" src="./js/restrict.js"></script>
+  <script defer src="./js/restrict.js"></script>
 </html>

@@ -3,7 +3,6 @@ import { HiOutlineBellAlert } from "react-icons/hi2";
 import { AiOutlineClockCircle, AiFillDelete } from "react-icons/ai";
 import { PiToggleRightFill, PiToggleLeftFill } from "react-icons/pi";
 import { useState } from "react";
-import { getFormattedTime } from "../Utilities/getFormattedTime";
 
 const Alert = ({ alert, setAlert, storageKey }) => {
   const [showTimerOptions, setTimerOptions] = useState(false);

@@ -40,3 +40,5 @@ Contributions to this project are welcome! Feel free to open issues, submit pull
 For any questions or support, please contact us at [iamdhanush02@gmail.com](mailto:iamdhanush02@gmail.com).
 
 Enjoy a more productive and mindful digital life with the Productivity Tracker Chrome Extension!
+
+

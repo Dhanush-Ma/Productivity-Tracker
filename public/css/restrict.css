@@ -28,6 +28,7 @@ body {
 .container{
     width: 90%;
     margin: 0 auto;
+    position: relative;
 }
 
 .navbarContainer{
@@ -87,8 +88,9 @@ a{
 
 .pin_container{
     display: flex;
-    margin: 1.4rem auto;
+    margin: 1rem auto;
     gap: 1rem;
+    margin-top: 0.5rem;
 }
 
 .pin{
@@ -111,6 +113,26 @@ a{
 
 .pin:focus{
     outline: none;
+    border: 5px solid var(--secondary-shade1);
+}
+
+.email{
+    width: 300px;
+    padding: 1rem 1rem;
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.4px);
+    -webkit-backdrop-filter: blur(11.4px);
+    border: 1px solid rgba(255, 255, 255, 0.51);
+    color: var(--white);
+    font-family: inherit;
+    font-size: medium;
+    margin: 0 auto;
+}
+
+.email:focus{
+    outline: none;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -121,18 +143,17 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0; 
 }
 
-.confirm_btn{
-    font-family: inherit;
-    font-size: 1.5rem;
-    padding: 0.5rem 0;
-    width: 300px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    color: var(--white);
-    background-color: var(--secondary-shade1);
-    margin: 0 auto;
+.pin_heading{
+    margin-top: 1.5rem;
+    line-height: 0;
 }
+
+.forgot_pin{
+    text-align: right;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
 
 .confirm_btn:hover{
     background-color: #f870cd;
@@ -172,33 +193,13 @@ input[type=number]::-webkit-outer-spin-button {
     outline: none;
 }
 
-.restrict_btn{
-    width: 300px;
-    font-family: inherit;
-    font-size: 1.3rem;
-    padding: 0.7rem 0.5rem;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    color: var(--white);
-    background-color: var(--secondary-shade1);
-    margin: 0 auto;
-}
 
 .restrict_btn:hover{
     background-color: #f870cd;
 }
 
-.check_btn{
+.forgot_container{
     width: 300px;
-    font-family: inherit;
-    font-size: 1.3rem;
-    padding: 0.7rem 0.5rem;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    color: var(--white);
-    background-color: var(--secondary-shade1);
     margin: 0 auto;
 }
 
@@ -212,6 +213,16 @@ input[type=number]::-webkit-outer-spin-button {
     color: whitesmoke;
     margin-top: 5px;
     width: 70%;
+}
+
+#email_address{
+    margin: 1.3rem 0;
+    font-size: 1.3rem;
+}
+
+#email_address span{
+    font-weight: bold;
+    color: var(--secondary-shade1);    
 }
 
 .restricted_sites_table{
@@ -263,4 +274,33 @@ td {
 
 button:focus{
     outline: none;
+}
+
+.btn{
+    width: 300px;
+    font-family: inherit;
+    font-size: 1.3rem;
+    padding: 0.7rem 0.5rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--secondary-shade1);
+    margin: 0 auto;
+}
+
+.email_otp, .set_new_pin{
+    text-align: center;
+    margin-top: 12rem;
+}
+
+.email_otp h2{
+    width: 450px;
+    margin: 0 auto;
+}
+
+.email_otp .pin_container,
+.set_new_pin .pin_container{
+    margin: 1.5rem auto;
+    width: max-content;
 }

@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Productivity Tracker",
   "description": "Enhance productivity with our Chrome Extension. Track, manage, and optimize your online activities.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "action":{
     "default_popup": "index.html"
   },
@@ -12,10 +12,9 @@
     "512": "assets/icon_512.png"
   },
   "permissions": [
-    "scripting",
     "tabs",
-    "activeTab",
-    "storage"
+    "storage",
+    "management"
   ],
   "content_scripts": [
     {

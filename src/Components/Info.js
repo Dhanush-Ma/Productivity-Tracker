@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { Context } from "../Context/Context";
 import styles from "../Stylesheets/Info.module.css";
 import BottomNavbar from "./BottomNavbar";
@@ -6,7 +5,7 @@ import Alert from "./Alert";
 import { getFormattedTime } from "../Utilities/getFormattedTime";
 
 const Info = () => {
-  const { data, setData, id } = React.useContext(Context);
+  const { data, id } = React.useContext(Context);
 
   const { url, today_timer, alert } = data;
   const timer = getFormattedTime(today_timer);

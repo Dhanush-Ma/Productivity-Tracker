@@ -1,7 +1,6 @@
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import Info from "./Components/Info";
 import TimeLine from "./Components/TimeLine";
-import ContextProvider from "./Context/Context";
 import { Context } from "./Context/Context";
 import { useContext, useEffect } from "react";
 
@@ -23,14 +22,26 @@ function Router() {
     chrome.tabs
       .query({ active: true, lastFocusedWindow: true })
       .then((tabs) => {
-        const url = new URL(tabs[0].url);
-        let domain = url.hostname;
-        domain = domain.replace(/^www\./i, "");
-        let key = `${domain}${id}`;
+        if (tabs[0]?.url) {
+          const url = new URL(tabs[0].url);
+          let domain = url.hostname;
+          domain = domain.replace(/^www\./i, "");
 
-        chrome.storage.local.get([key]).then((result) => {
-          setData(result[key]);
-        });
+          if (
+            !tabs[0].url.startsWith("http://") &&
+            !tabs[0].url.startsWith("https://")
+          ) {
+            const parts = tabs[0].url.split("://");
+            if (parts.length > 1) {
+              domain = parts[0];
+            }
+          }
+          const key = `${domain}${id}`;
+
+          chrome.storage.local.get([key]).then((result) => {
+            setData(result[key]);
+          });
+        }
       });
   }, [data, data.alert]);
 

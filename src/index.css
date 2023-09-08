@@ -74,6 +74,7 @@ a{
   outline: none;
   color: var(--white);
   font-family: inherit;
+  
 }
 
 .react-calendar button:enabled:hover {
@@ -97,7 +98,7 @@ a{
 
 .react-calendar__navigation button:enabled:hover,
 .react-calendar__navigation button:enabled:focus {
-    background: var(--secondary-shade1);
+    /* background: var(--secondary-shade1); */
 
 }
 
@@ -132,6 +133,7 @@ a{
 .react-calendar__decade-view .react-calendar__tile,
 .react-calendar__century-view .react-calendar__tile {
   padding: 2em 0.5em;
+
 }
 
 .react-calendar__tile {
@@ -140,6 +142,8 @@ a{
   background: none;
   text-align: center;
   line-height: 16px;
+    border-radius: 10px;
+
 }
 
 .react-calendar__tile:disabled {
@@ -153,7 +157,7 @@ a{
 }
 
 .react-calendar__tile--now {
-  /* background: var(--secondary-shade1); */
+  /* background: var(--secondary-shade); */
 }
 
 .react-calendar__tile--now:enabled:hover,

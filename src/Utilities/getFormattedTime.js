@@ -1,4 +1,6 @@
 export const getFormattedTime = (ms) => {
+  if (isNaN(ms)) return [0, 0, 0];
+
   let seconds = Math.floor((ms / 1000) % 60);
   let minutes = Math.floor((ms / (1000 * 60)) % 60);
   let hours = Math.floor((ms / (1000 * 60 * 60)) % 24);

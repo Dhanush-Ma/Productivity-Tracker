@@ -1,16 +1,27 @@
 const id = "cobpilibcfpjgkcklmhgagemnjmhdlmi";
-const key = `${id}_restrict`;
+const key = `${id}_restrict_account`;
 
 chrome.storage.local.get([key], function (result) {
   result = result[key];
-  const { restricted_sites } = result;
+  const { email, restricted_sites } = result;
 
   chrome.runtime.sendMessage({ action: "getActiveTabInfo" }, (response) => {
     let url = new URL(response.response.url);
     let domain = url.hostname;
     domain = domain.replace(/^www\./i, "");
 
+    if (
+      !response.response.url.startsWith("http://") &&
+      !response.response.url.startsWith("https://")
+    ) {
+      const parts = response.response.url.split("://");
+      if (parts.length > 1) {
+        domain = parts[0];
+      }
+    }
+
     if (restricted_sites.includes(domain)) {
+      sendToServer(domain, email);
       restrictAccessToSite();
       return;
     }
@@ -140,50 +151,84 @@ function closeModal() {
 function restrictAccessToSite() {
   document.documentElement.innerHTML = `
     <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Blocked</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Site Blocked</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
 
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        body{
-            font-size: 1rem;
-            
-            background: linear-gradient(222.38deg,#872a95,#35297f 81.75%,#35297f);
-             --white: #fff;;
-             width: 100vw;
-             height: 100vh;
-             color: #fff;
-             font-family: 'Montserrat';
-             display: flex;
-             justify-content: center;
-             align-items: center;
-        }
-        h1{
-            font-size: 60px !important;
-        }
-        p{
-            position: absolute;
-            bottom: 32px !important;
-            left: 50%;
-            transform: translateX(-50%);
-            font-weight: bold;
-            font-size: 30px !important;
-        }
-    </style>
-</head>
-<body>
-    <h1>
-        This site has been blocked.
-    </h1>
-    <p>&#9432; Productivity Tracker</p>
-</body>
-</html>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                font-size: 1rem;
+                background: linear-gradient(222.38deg,#872a95,#35297f 81.75%,#35297f);
+                --white: #fff;;
+                width: 100vw;
+                height: 100vh;
+                color: #fff;
+                font-family: 'Montserrat';
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            h1{
+                text-align: center;
+                font-size: 60px !important;
+            }
+            p{
+                position: absolute;
+                bottom: 32px !important;
+                left: 50%;
+                transform: translateX(-50%);
+                font-weight: bold;
+                font-size: 30px !important;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            This site has been blocked.
+        </h1>
+        <p>&#9432; Productivity Tracker</p>
+    </body>
+  </html>
   `;
+}
+
+function sendToServer(siteName, email) {
+  const BACKEND_URL =
+    "https://productivity-tracker-backend.onrender.com/restrict";
+  const options = {
+    method: "POST",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    referrerPolicy: "no-referrer",
+    body: JSON.stringify({
+      email: email,
+      siteName: siteName,
+      timestamp: getFormattedDateAndTime(new Date().getTime()),
+    }),
+  };
+
+  fetch(BACKEND_URL, options);
+}
+
+function getFormattedDateAndTime(timestamp) {
+  const options = {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  };
+
+  const dateTime = new Date(timestamp);
+  return dateTime.toLocaleString("en-US", options);
 }

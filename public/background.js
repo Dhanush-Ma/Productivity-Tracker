@@ -1,13 +1,23 @@
-let id = "_cobpilibcfpjgkcklmhgagemnjmhdlmi";
+const id = "cobpilibcfpjgkcklmhgagemnjmhdlmi";
+const key = `${id}_restrict_account`;
 
 async function updateStorageValue() {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     if (tabs.length == 0) return;
 
-    let url = new URL(tabs[0].url);
+    const url = new URL(tabs[0].url);
     let domain = url.hostname;
     domain = domain.replace(/^www\./i, "");
 
+    if (
+      !tabs[0].url.startsWith("http://") &&
+      !tabs[0].url.startsWith("https://")
+    ) {
+      const parts = tabs[0].url.split("://");
+      if (parts.length > 1) {
+        domain = parts[0];
+      }
+    }
     const key = `${domain}${id}`;
     const today_date = new Date().toLocaleDateString();
 
@@ -16,12 +26,13 @@ async function updateStorageValue() {
 
       if (prevResult && checkAlertTimer(prevResult)) {
         let tabId = tabs[0].id;
+
         let message = {
           action: "Alert Notification",
           data: { alertInfo: prevResult.alert },
         };
         chrome.tabs.sendMessage(tabId, message, function (response) {});
-        prevResult.alert.offset = prevResult.today_timer;
+        prevResult.alert.isActive = false;
       }
 
       if (prevResult && checkTodayTimer(prevResult, today_date)) {
@@ -54,7 +65,6 @@ setInterval(updateStorageValue, 1000);
 
 function checkAlertTimer(prevResult) {
   if (prevResult.alert && prevResult.alert.isActive) {
-    let x = prevResult.alert.duration + prevResult.alert.offset;
     if (
       prevResult.today_timer ==
       prevResult.alert.duration + prevResult.alert.offset
@@ -98,4 +108,42 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   return true;
 });
 
+chrome.management.onEnabled.addListener(function (ExtensionInfo) {
+  const BACKEND_URL =
+    "https://productivity-tracker-backend.onrender.com/disabled";
 
+  chrome.storage.local.get([key], function (result) {
+    result = result[key];
+
+    if (result?.email) {
+      const options = {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        referrerPolicy: "no-referrer",
+        body: JSON.stringify({
+          email: result.email,
+          timestamp: getFormattedDateAndTime(new Date().getTime()),
+        }),
+      };
+
+      fetch(BACKEND_URL, options);
+    }
+  });
+});
+
+function getFormattedDateAndTime(timestamp) {
+  const options = {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  };
+
+  const dateTime = new Date(timestamp);
+  return dateTime.toLocaleString("en-US", options);
+}

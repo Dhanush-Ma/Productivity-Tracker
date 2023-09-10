@@ -39,15 +39,15 @@ const create_modal_container = (tag, attr_tag, attr_name, value) => {
 };
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+  console.log(message);
   if (message.action === "Alert Notification") {
-    console.log("Received message from background script:", message);
+    console.log("Received message from background script");
+    openOverlayModal();
   }
-  openOverlayModal();
 });
 
 function openOverlayModal() {
   const imageUrl = chrome.runtime.getURL("assets/alert.gif");
-  console.log(imageUrl);
 
   add_custom_style(`
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');

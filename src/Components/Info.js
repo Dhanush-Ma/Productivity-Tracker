@@ -10,7 +10,7 @@ const Info = () => {
 
   const { url, today_timer, alert } = data;
   const timer = getFormattedTime(today_timer);
-  const key = `${url}${id}`;
+  const key = `${id}_${url}`;
 
   const setAlert = (duration) => {
     /* eslint-disable no-undef */

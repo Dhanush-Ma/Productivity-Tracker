@@ -221,7 +221,7 @@ function deleteSite(delete_icon) {
     result.restricted_sites = restricted_sites;
 
     chrome.storage.local.set({ [key]: result });
-    updateRestrictedSites();
+    updateRestrictedSites(user_email);
   });
 }
 

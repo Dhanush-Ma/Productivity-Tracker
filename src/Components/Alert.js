@@ -139,4 +139,3 @@ const TimerOptions = ({ setAlert }) => {
     </div>
   );
 };
-

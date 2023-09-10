@@ -36,8 +36,8 @@ function Router() {
               domain = parts[0];
             }
           }
-          const key = `${domain}${id}`;
-
+          const key = `${id}_${domain}`;
+          
           chrome.storage.local.get([key]).then((result) => {
             setData(result[key]);
           });

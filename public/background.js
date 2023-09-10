@@ -18,7 +18,7 @@ async function updateStorageValue() {
         domain = parts[0];
       }
     }
-    const key = `${domain}${id}`;
+    const key = `${id}_${domain}`;
     const today_date = new Date().toLocaleDateString();
 
     chrome.storage.local.get([key], function (result) {
@@ -26,7 +26,7 @@ async function updateStorageValue() {
 
       if (prevResult && checkAlertTimer(prevResult)) {
         let tabId = tabs[0].id;
-
+        console.log(tabId)
         let message = {
           action: "Alert Notification",
           data: { alertInfo: prevResult.alert },
@@ -91,6 +91,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "getRestrictPageUrl") {
     const restrictPageUrl = chrome.runtime.getURL("restrict.html");
     sendResponse({ restrictPageUrl });
+  }
+
+  if (message.action === "getUsagePageUrl") {
+    const usagePageUrl = chrome.runtime.getURL("usage.html");
+    sendResponse({ usagePageUrl });
   }
 
   if (message.action === "getRestrictData") {

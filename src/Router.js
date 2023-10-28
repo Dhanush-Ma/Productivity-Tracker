@@ -43,7 +43,7 @@ function Router() {
           });
         }
       });
-  }, [data, data.alert]);
+  }, [data, data?.alert]);
 
   return <>{data && <RouterProvider router={router} />}</>;
 }

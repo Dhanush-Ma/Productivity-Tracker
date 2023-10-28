@@ -45,19 +45,47 @@ document.querySelector(".confirm_btn").addEventListener("click", () => {
     document.getElementById("pin3").value +
     document.getElementById("pin4").value;
 
-  if (pin.length == 4 && validateEmail(email)) {
-    chrome.storage.local.set({
-      [key]: {
-        pin: pin,
-        email: email,
-        restricted_sites: [],
+  const isValidEmail = validateEmail(email);
+
+  if (!isValidEmail) {
+    alert("Invalid Email");
+  } else if (pin.length !== 4) {
+    alert("Invalid PIN");
+  } else {
+    const BACKEND_URL =
+      "https://productivity-tracker-backend.onrender.com/users";
+    const options = {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
       },
-    });
+      referrerPolicy: "no-referrer",
+      body: JSON.stringify({
+        email: email,
+        timestamp: getFormattedDateAndTime(new Date().getTime()),
+      }),
+    };
 
-    create_account_container.remove();
+    document.querySelector(".confirm_btn").innerHTML =
+      "<div class='spinner'></div>";
 
-    restricted_sites_container.style.display = "block";
-    updateRestrictedSites(email);
+    fetch(BACKEND_URL, options)
+      .then(() => {
+        chrome.storage.local.set({
+          [key]: {
+            pin: pin,
+            email: email,
+            restricted_sites: [],
+          },
+        });
+
+        create_account_container.remove();
+
+        restricted_sites_container.style.display = "block";
+        updateRestrictedSites(email);
+      })
+      .catch((err) => console.log(err));
   }
 });
 
@@ -114,8 +142,6 @@ document.querySelector(".confirm_otp_btn").addEventListener("click", () => {
     document.getElementById("pin2o").value +
     document.getElementById("pin3o").value +
     document.getElementById("pin4o").value;
-
-  console.log(user_otp);
 
   if (user_otp == otp) {
     email_otp_container.remove();
@@ -264,4 +290,18 @@ function sendOTP() {
   };
 
   fetch(BACKEND_URL, options);
+}
+
+function getFormattedDateAndTime(timestamp) {
+  const options = {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  };
+
+  const dateTime = new Date(timestamp);
+  return dateTime.toLocaleString("en-US", options);
 }
